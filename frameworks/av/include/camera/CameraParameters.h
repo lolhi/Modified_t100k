@@ -953,6 +953,77 @@ public:
 #endif
 #endif
 
+//cm10 t100k
+#ifdef T100K
+    static const char KEY_VT[];
+    static const char KEY_REFLECT[];
+    static const char KEY_MULTISHOT[];
+    static const char KEY_ANTISHAKE[];
+    static const char KEY_FOCUS_STEP[];
+    static const char KEY_FACE_FILTER_ROTATION[];
+    static const char KEY_FACE_FILTER[];
+    static const char KEY_FACE_SELFSHOT_NUM[];
+    static const char FACE_FILTER_OFF[];
+    static const char FACE_FILTER_ON[];
+    static const char KEY_FACE_SMILE_SCORE[];
+    static const char KEY_SUPPORTED_FACE_FILTER[];
+    static const char KEY_FACE_FILTER_RECT[];
+    static const char KEY_FOCUS_COORDINATES[];
+    static const char KEY_SUPPORTED_ANTISHAKE[];
+    static const char REFLECT_OFF[];
+    static const char REFLECT_MIRROR[];
+    static const char REFLECT_WATER[];
+    static const char REFLECT_MIRROR_WATER[];
+    static const char KEY_SUPPORTED_REFLECT[];
+    static const char FACE_FILTER_ANGRY[];
+    static const char FACE_FILTER_SICK[];
+    static const char FACE_FILTER_TEAR[];
+    static const char FACE_FILTER_POOH[];
+    static const char FACE_FILTER_CROWN[];
+    static const char FACE_FILTER_GENTLEMAN[];
+    static const char FACE_FILTER_KISS[];
+    static const char FACE_FILTER_PIRATE[];
+    static const char FACE_FILTER_PUNCH[];
+    static const char FACE_FILTER_SHEEPHOOD[];
+    static const char FACE_FILTER_VERTIGO[];
+    static const char FACE_FILTER_ABSURD[];
+    static const char FACE_FILTER_MONO[];
+    static const char FACE_FILTER_BIGHEAD[];
+    static const char FACE_FILTER_FACIALCOLOR[];
+    static const char FACE_FILTER_OUTFOCUS[];
+    static const char FACE_FILTER_RADIALBLUR[];
+    static const char FACE_FILTER_MOSAIC[];
+    static const char FACE_FILTER_FISHEYE[];
+    static const char FACE_FILTER_CONCAVE[];
+    static const char FACE_FILTER_BEAUTYBLUR[];
+    static const char FACE_FILTER_HEATUP[];
+    static const char FACE_FILTER_SNOW[];
+    static const char FACE_FILTER_LOMO[];
+    static const char FACE_FILTER_SMILEDETECT[];
+    static const char FACE_FILTER_FACEDETECT[];
+    static const char FACE_FILTER_SELFSHOTHELPER[];
+    static const char ANTISHAKE_OFF[];
+    static const char ANTISHAKE_ON[];
+    static const char MULTISHOT_OFF[];
+    static const char MULTISHOT_ON[];
+    static const char VT_OFF[];
+    static const char HDVT_ON[];
+    static const char H324MVT_ON[];
+    static const char LGTVT_ON[];
+    static const char SCENE_MODE_INDOOR[];
+    static const char SCENE_MODE_DAWN[];
+    static const char SCENE_MODE_AUTUMN[];
+    static const char SCENE_MODE_TEXT[];
+    static const char AUTO_EXPOSURE_OFF[];
+    static const char FOCUS_MODE_SPOT[];
+    static const char WHITE_BALANCE_OFF[];
+
+    void getFocusCoordinates(int *x, int *y) const;
+    void setFocusCoordinates(int x, int y);
+    void getFaceFilterRect(int *x, int *y) const;
+    void setFaceFilterRect(int x, int y);
+#endif
+
 private:
     DefaultKeyedVector<String8,String8>    mMap;
 };

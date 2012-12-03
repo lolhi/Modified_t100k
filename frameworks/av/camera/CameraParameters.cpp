@@ -859,4 +859,91 @@ status_t CameraParameters::dump(int fd, const Vector<String16>& args) const
     return NO_ERROR;
 }
 
+//cm10 t100k
+#ifdef T100K
+const char CameraParameters::KEY_VT[] = "pantech-vt";
+const char CameraParameters::KEY_REFLECT[] = "pantech-reflect";
+const char CameraParameters::KEY_MULTISHOT[] = "pantech-multishot";
+const char CameraParameters::KEY_ANTISHAKE[] = "pantech-antishake";
+const char CameraParameters::KEY_FOCUS_STEP[] = "pantech-focus-step";
+const char CameraParameters::KEY_FACE_FILTER_ROTATION[] = "pantech-face-rotation";
+const char CameraParameters::KEY_FACE_FILTER[] = "pantech-face-filter";
+const char CameraParameters::KEY_FACE_SELFSHOT_NUM[] = "pantech-face-selfshot-num";
+const char CameraParameters::FACE_FILTER_OFF[] = "off";
+const char CameraParameters::FACE_FILTER_ON[] = "on";
+const char CameraParameters::KEY_FACE_SMILE_SCORE[] = "pantech-face-smile-score";
+const char CameraParameters::KEY_SUPPORTED_FACE_FILTER[] = "pantech-face-filter-values";
+const char CameraParameters::KEY_FACE_FILTER_RECT[] = "pantech-face-filter-rect";
+const char CameraParameters::KEY_FOCUS_COORDINATES[] = "pantech-focus-coordinates";
+const char CameraParameters::KEY_SUPPORTED_ANTISHAKE[] = "pantech-antishake-values";
+const char CameraParameters::REFLECT_OFF[] = "off";
+const char CameraParameters::REFLECT_MIRROR[] = "mirror";
+const char CameraParameters::REFLECT_WATER[] = "water";
+const char CameraParameters::REFLECT_MIRROR_WATER[] = "mirror-water";
+const char CameraParameters::KEY_SUPPORTED_REFLECT[] = "pantech-reflect-values";
+const char CameraParameters::FACE_FILTER_ANGRY[] = "angry";
+const char CameraParameters::FACE_FILTER_SICK[] = "sick";
+const char CameraParameters::FACE_FILTER_TEAR[] = "tear";
+const char CameraParameters::FACE_FILTER_POOH[] = "pooh";
+const char CameraParameters::FACE_FILTER_CROWN[] = "crown";
+const char CameraParameters::FACE_FILTER_GENTLEMAN[] = "gentleman";
+const char CameraParameters::FACE_FILTER_KISS[] = "kiss";
+const char CameraParameters::FACE_FILTER_PIRATE[] = "pirate";
+const char CameraParameters::FACE_FILTER_PUNCH[] = "punch";
+const char CameraParameters::FACE_FILTER_SHEEPHOOD[] = "sheephood";
+const char CameraParameters::FACE_FILTER_VERTIGO[] = "vetrigo";
+const char CameraParameters::FACE_FILTER_ABSURD[] = "absurd";
+const char CameraParameters::FACE_FILTER_MONO[] = "mono";
+const char CameraParameters::FACE_FILTER_BIGHEAD[] = "bighead";
+const char CameraParameters::FACE_FILTER_FACIALCOLOR[] = "facialcolor";
+const char CameraParameters::FACE_FILTER_OUTFOCUS[] = "outfocus";
+const char CameraParameters::FACE_FILTER_RADIALBLUR[] = "radialblur";
+const char CameraParameters::FACE_FILTER_MOSAIC[] = "mosaic";
+const char CameraParameters::FACE_FILTER_FISHEYE[] = "fisheye";
+const char CameraParameters::FACE_FILTER_CONCAVE[] = "concave";
+const char CameraParameters::FACE_FILTER_BEAUTYBLUR[] = "beautyblur";
+const char CameraParameters::FACE_FILTER_HEATUP[] = "heatup";
+const char CameraParameters::FACE_FILTER_SNOW[] = "show";
+const char CameraParameters::FACE_FILTER_LOMO[] = "lomo";
+const char CameraParameters::FACE_FILTER_SMILEDETECT[] = "smiledetect";
+const char CameraParameters::FACE_FILTER_FACEDETECT[] = "facedetect";
+const char CameraParameters::FACE_FILTER_SELFSHOTHELPER[] = "selfshothelper";
+const char CameraParameters::ANTISHAKE_OFF[] = "off";
+const char CameraParameters::ANTISHAKE_ON[] = "on";
+const char CameraParameters::MULTISHOT_OFF[] = "off";
+const char CameraParameters::MULTISHOT_ON[] = "on";
+const char CameraParameters::VT_OFF[] = "off";
+const char CameraParameters::HDVT_ON[] = "on";
+const char CameraParameters::H324MVT_ON[] = "on";
+const char CameraParameters::LGTVT_ON[] = "on";
+const char CameraParameters::SCENE_MODE_INDOOR[] = "indoor";
+const char CameraParameters::SCENE_MODE_DAWN[] = "dawn";
+const char CameraParameters::SCENE_MODE_AUTUMN[] = "autumn";
+const char CameraParameters::SCENE_MODE_TEXT[] = "text";
+const char CameraParameters::AUTO_EXPOSURE_OFF[] = "off";
+const char CameraParameters::FOCUS_MODE_SPOT[] = "spot";
+const char CameraParameters::WHITE_BALANCE_OFF[] = "off";
+
+void CameraParameters::getFocusCoordinates(int *x, int *y) const
+{
+    // dummy
+}
+
+void CameraParameters::setFocusCoordinates(int x, int y)
+{
+    // dummy
+}
+
+void CameraParameters::getFaceFilterRect(int *x, int *y) const
+{
+    // dummy
+}
+
+void CameraParameters::setFaceFilterRect(int x, int y)
+{
+    // dummy
+}
+
+#endif
+
 }; // namespace android

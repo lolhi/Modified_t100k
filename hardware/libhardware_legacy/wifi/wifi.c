@@ -950,3 +950,16 @@ int wifi_change_fw_path(const char *fwpath)
     close(fd);
     return ret;
 }
+
+//cm10 t100k for skytestserver
+#ifdef T100K
+int wifi_load_mfg_driver()
+{
+    return 0;
+}
+
+int wifi_unload_mfg_driver()
+{
+    return 0;
+}
+#endif

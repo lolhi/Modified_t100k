@@ -167,6 +167,9 @@ public class SystemSensorManager extends SensorManager {
         public SparseBooleanArray mSensors = new SparseBooleanArray();
         public SparseBooleanArray mFirstEvent = new SparseBooleanArray();
         public SparseIntArray mSensorAccuracies = new SparseIntArray();
+//cm10 t100k
+	private boolean mProximityOnOff = true;
+	private float mPreDistance = 0;
 
         ListenerDelegate(SensorEventListener listener, Sensor sensor, Handler handler) {
             mSensorEventListener = listener;
@@ -230,7 +233,28 @@ public class SystemSensorManager extends SensorManager {
 
         void onSensorChangedLocked(Sensor sensor, float[] values, long[] timestamp, int accuracy) {
             SensorEvent t = sPool.getFromPool();
-            final float[] v = t.values;zz
+            final float[] v = t.values;
+//cm10 t100k
+	    if ( sensor.getType() == 8 ) {
+		if ( mProximityOnOff ) {
+		    if ( values[1] > 30 ) {
+			mPreDistance = 5;
+			mProximityOnOff = false;
+		    }
+		    else
+			return;
+		}
+		else {
+		    if ( values[1] < 10 ) {
+			mPreDistance = 0;
+			mProximityOnOff = true;
+		    }
+		    else
+			return;
+		}
+	        values[0] = mPreDistance;
+	    }
+
             v[0] = values[0];
             v[1] = values[1];
             v[2] = values[2];

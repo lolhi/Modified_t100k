@@ -63,7 +63,8 @@ final class WiredAccessoryManager implements WiredAccessoryCallbacks {
                                                    BIT_USB_HEADSET_ANLG|BIT_USB_HEADSET_DGTL|
                                                    BIT_HDMI_AUDIO);
 
-    private static final String NAME_H2W = "h2w";
+//cm10 t100k
+    private static final String NAME_H2W = "hw2";
     private static final String NAME_USB_AUDIO = "usb_audio";
     private static final String NAME_HDMI_AUDIO = "hdmi_audio";
     private static final String NAME_HDMI = "hdmi";

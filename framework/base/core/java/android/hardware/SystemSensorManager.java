@@ -28,6 +28,9 @@ import android.util.SparseIntArray;
 import java.util.ArrayList;
 import java.util.List;
 
+//cm10 ef34k ef33s ef35l
+import android.os.SystemProperties;
+
 /**
  * Sensor manager implementation that communicates with the built-in
  * system sensors.
@@ -167,9 +170,10 @@ public class SystemSensorManager extends SensorManager {
         public SparseBooleanArray mSensors = new SparseBooleanArray();
         public SparseBooleanArray mFirstEvent = new SparseBooleanArray();
         public SparseIntArray mSensorAccuracies = new SparseIntArray();
-//cm10 t100k
+//cm10 t100k ef34k ef33s ef35l
 	private boolean mProximityOnOff = true;
 	private float mPreDistance = 0;
+	private String ProxType = SystemProperties.get("persist.proximity_type", "default");
 
         ListenerDelegate(SensorEventListener listener, Sensor sensor, Handler handler) {
             mSensorEventListener = listener;
@@ -234,10 +238,10 @@ public class SystemSensorManager extends SensorManager {
         void onSensorChangedLocked(Sensor sensor, float[] values, long[] timestamp, int accuracy) {
             SensorEvent t = sPool.getFromPool();
             final float[] v = t.values;
-//cm10 t100k
+//cm10 t100k ef34k ef33s ef35l
 	    if ( sensor.getType() == 8 ) {
 		if ( mProximityOnOff ) {
-		    if ( values[1] > 30 ) {
+		    if ( ( ProxType.equals("default") && (values[2] < 40) ) || ( ProxType.equals("racer") && (values[0] > 4) ) ) {
 			mPreDistance = 5;
 			mProximityOnOff = false;
 		    }
@@ -245,7 +249,7 @@ public class SystemSensorManager extends SensorManager {
 			return;
 		}
 		else {
-		    if ( values[1] < 10 ) {
+		    if ( ( ProxType.equals("default") && (values[2] > 50) ) || ( ProxType.equals("racer") && (values[0] < 5) ) ) {
 			mPreDistance = 0;
 			mProximityOnOff = true;
 		    }

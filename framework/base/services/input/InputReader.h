@@ -569,7 +569,9 @@ public:
     bool hasAbsoluteAxis(int32_t code) {
         RawAbsoluteAxisInfo info;
         getEventHub()->getAbsoluteAxisInfo(mId, code, &info);
-        return info.valid;
+//cm10 ef34k ef33s ef35l
+//        return info.valid;
+	return false;
     }
 
     bool isKeyPressed(int32_t code) {
